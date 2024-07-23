@@ -12,23 +12,24 @@
             place-items: center;
             height: 100vh;
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            margin: 0; /* Hapus margin default dari body */
+            margin: 0;
         }
         h1 {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             padding-bottom: 0px;
-            font-size: 40px;
+            font-size: 10vw; /* Menggunakan vw agar responsif */
             text-align: center;
             white-space: nowrap;
             overflow: hidden;
-            border-right: 0.15em solid orange; /* Efek kursor */
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            border-right: 0.10em solid orange;
+             /* Efek kursor */
             color: white;
+            display: none;
         }
-        h2 {
+        h3 {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            padding-bottom: 0px;
-            font-size: 30px;
+            font-size: 20px; /* Ukuran font tetap dalam piksel */
+            line-height: 1.2; /* Menyediakan jarak antara baris teks */
             text-align: center;
         }
         
@@ -44,7 +45,7 @@
             overflow: hidden; /* Menyembunyikan scrollbar */
             height: 70vh; /* Menentukan tinggi container untuk scrolling vertikal */
             max-height: 100%;
-            position: relative; /* Menjaga elemen tetap dalam konteks container */
+            position: relative;
             font-family: 'Comic Sans MS', cursive, sans-serif;
             font-weight: bold;
         }
@@ -80,8 +81,9 @@
             background-color: #333;
             padding: 20px;
             border: 1px solid #888;
-            width: 250px; /* Ubah sesuai kebutuhan lebar */
-            height: 140px; /* Ubah sesuai kebutuhan tinggi */
+            width: 80vw; /* Menggunakan vw agar responsif */
+            max-width: 400px; /* Batas maksimum lebar */
+            height: auto; /* Menggunakan tinggi otomatis */
             border-radius: 10px;
             text-align: center;
             font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -90,10 +92,10 @@
         }
         .popup h2 {
             margin-top: 15px;
-            font-size: 24px;
+            font-size: 4vw; /* Menggunakan vw agar responsif */
         }
         .popup p {
-            font-size: 16px;
+            font-size: 3vw; /* Menggunakan vw agar responsif */
             margin-bottom: 20px;
         }
         .btn {            
@@ -105,7 +107,7 @@
             cursor: pointer;
             display: inline-block;
             margin-top: 10px;
-            width: calc(100% - 25px);
+            width: calc(100% - 20px); /* Menyesuaikan ukuran tombol */
         }
         .btn:hover {
             background-color: #0056b3;
@@ -115,7 +117,7 @@
                 opacity: 0;
             }
             to {
-                opacity: 100;
+                opacity: 1;
             }
         }
         @keyframes typing {
@@ -132,7 +134,7 @@
     <div class="popup-overlay" id="initialPopup">
         <div class="popup">
             <!-- Konten popup -->
-            <h2>Selamat Datang di Website Risput</h2>
+            <h3>Selamat Datang di Website Risput</h3>
             <p></p>
             
             <!-- Tombol tutup -->
@@ -221,6 +223,7 @@
         function showBaekSeongmin() {
             var baekSeongmin = document.getElementById("baekSeongmin");
             baekSeongmin.style.display = "block";
+            baekSeongmin.style.animation = "typing 4s steps(40, end), blink-caret 0.75s step-end infinite";
         }
 
         // Tambahkan event listener ke tombol
